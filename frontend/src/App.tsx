@@ -33,8 +33,8 @@ import '@ionic/react/css/display.css';
 /* import '@ionic/react/css/palettes/dark.class.css'; */
 import '@ionic/react/css/palettes/dark.system.css';
 
-/* Theme variables */
-import './theme/variables.css';
+// /* Theme variables */
+// import './theme/variables.css';
 
 setupIonicReact();
 

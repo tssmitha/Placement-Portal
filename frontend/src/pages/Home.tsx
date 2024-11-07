@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 
@@ -7,15 +7,25 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Blank</IonTitle>
+          <IonTitle>College Placement Portal</IonTitle>
         </IonToolbar>
       </IonHeader>
+
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <section className='hero'>
+          <div className='hero-content'>
+            <h1>Welcome to the college placement portal</h1>
+            <p>Prepare to fulfill your DREAMS!</p>
+            <IonButton expand="block" color="secondary"href='/companies'>
+              Companies
+            </IonButton>
+          <IonButton expand='block' color='secondary' href='/placement-prep'>
+            Start your placement prep
+          </IonButton>
+          </div>
+        </section>
+
+        
         <ExploreContainer />
       </IonContent>
     </IonPage>
