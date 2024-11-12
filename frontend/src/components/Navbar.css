@@ -1,0 +1,14 @@
+/* Navbar.css */
+
+/* Adds 15px right margin to the IonToolbar */
+ion-toolbar {
+    padding-right: 25px;
+  }
+  
+  /* Adds 15px margin to the IonButtons if it’s more specific to button area */
+  ion-buttons {
+    margin-right: 25px;
+  }
+
+
+  
