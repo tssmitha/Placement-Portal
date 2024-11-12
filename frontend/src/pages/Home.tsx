@@ -18,7 +18,7 @@ const Home = () => {
     <IonPage>
       {/* Split pane layout for Sidebar and main content */}
       <IonSplitPane contentId="main-content">
-        <Sidebar />
+       
 
         {/* Main content with Navbar */}
         <IonPage id="main-content">
