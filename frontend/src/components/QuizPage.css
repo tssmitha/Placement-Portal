@@ -1,0 +1,78 @@
+/* Container styling for the quiz content */
+.quiz-container {
+  padding: 20px;
+}
+
+/* Styling for the question card */
+.quiz-card {
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Styling for question title with numbering */
+.quiz-card-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+/* Numbering for the question */
+.question-number {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* Vertical layout for the radio options */
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+/* Option style: radio item styling */
+.quiz-options ion-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: background-color 0.2s ease;
+}
+
+/* Option hover and selected styling */
+.quiz-options ion-item:hover {
+  background-color: #e6e6e6;
+}
+
+.quiz-options ion-radio {
+  margin-right: 10px;
+}
+
+/* Button container for better spacing */
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* Individual button styling */
+.actions ion-button {
+  flex: 1;
+  font-weight: bold;
+}
+
+.finish-button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: #3880ff;
+  color: #fff;
+}

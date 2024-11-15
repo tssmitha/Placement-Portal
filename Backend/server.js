@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/auth');
+const quizRoutes = require('./routes/quizRoutes');
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ mongoose.connect(process.env.Mongo_URI)
     
 // Use the auth routes
 app.use('/api/auth', authRoutes);
+app.use('/api/quizzes',quizRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

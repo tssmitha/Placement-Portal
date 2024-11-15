@@ -1,0 +1,47 @@
+/* Style for the dashboard header */
+.dashboard-header {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  /* Flex container for the quiz section cards */
+  .dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Style for each quiz section card */
+  .dashboard-card {
+    width: 300px;
+    margin: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .dashboard-card-content {
+    flex-grow: 1; /* Allows the content to take up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .dashboard-card-icon {
+    font-size: 40px;
+    color: #3880ff;
+    margin-top: 10px;
+  }
+  
+  .dashboard-card-button {
+    margin-top: auto;
+    padding: 10px;
+  }
+  

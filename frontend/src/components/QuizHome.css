@@ -1,0 +1,31 @@
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .quiz-card-header {
+    width: 80%; /* Adjust the width to make it a long rectangle */
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between sub-topic text and the button */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+  }
+  
+  .quiz-card-title {
+    flex: 1; /* Ensures the title takes available space */
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  .quiz-button {
+    margin-left: auto; /* Align the button to the far right */
+    width: 160px; /* Define a fixed width for the button */
+  }
+  

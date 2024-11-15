@@ -3,7 +3,7 @@ import { IonContent, IonPage, IonInput, IonButton, IonItem, IonLabel, InputChang
 import { useHistory } from "react-router";
 import axios from "axios";
 import './Login.css';
-import Logo from './images.png'
+import Logo from './images.png';
 
 // Define the custom event interface
 interface IonInputCustomEvent extends CustomEvent {
