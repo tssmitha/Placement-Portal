@@ -22,15 +22,16 @@ const Home = () => {
 
         {/* Main content with Navbar */}
         <IonPage id="main-content">
-          <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+          {/* <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} /> */}
 
           <IonContent fullscreen>
-            <IonHeader collapse="condense">
+            {/* <IonHeader collapse="condense">
               <IonToolbar>
                 <IonTitle size="large">Home</IonTitle>
               </IonToolbar>
             </IonHeader>
-            <ExploreContainer />
+            <ExploreContainer /> */}
+            <h1>hello</h1>
           </IonContent>
         </IonPage>
       </IonSplitPane>

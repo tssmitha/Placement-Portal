@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Redirect, Route } from "react-router-dom";
 import {
   IonApp,
@@ -47,18 +47,30 @@ import Problems from "./pages/Problems";
 import Resources from "./pages/Resources";
 import Communities from "./pages/Communities";
 import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
 
 setupIonicReact();
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    document.body.classList.toggle('dark-theme', !isDarkMode);
+    document.body.classList.toggle('light-theme', isDarkMode);
+  };
+
+  return (
   <IonApp>
     {" "}
    
     <IonReactRouter>
-      <IonSplitPane contentId="main-content">
+      <IonSplitPane contentId="main-content" className="main-content">
         <Sidebar />
+        <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
 
-        <IonRouterOutlet id="main-content">
+        <IonRouterOutlet id="main-content" className="main-content">
+      
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/reset-password" component={ResetPassword} />
@@ -71,7 +83,7 @@ const App: React.FC = () => (
         </IonRouterOutlet>
       </IonSplitPane>
     </IonReactRouter>
-  </IonApp>
-);
+  </IonApp>)
+};
 
 export default App;
