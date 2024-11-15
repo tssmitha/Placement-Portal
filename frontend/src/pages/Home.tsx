@@ -1,33 +1,39 @@
-import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import React, { useState } from 'react';
+import { IonContent, IonHeader, IonPage, IonSplitPane,IonToolbar,IonTitle} from '@ionic/react';
+import Navbar from '../components/Navbar';
+import Sidebar from '../components/Sidebar';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 
-const Home: React.FC = () => {
+const Home = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    document.body.classList.toggle('dark-theme', !isDarkMode);
+    document.body.classList.toggle('light-theme', isDarkMode);
+  };
+
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>College Placement Portal</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      {/* Split pane layout for Sidebar and main content */}
+      <IonSplitPane contentId="main-content">
+       
 
-      <IonContent fullscreen>
-        <section className='hero'>
-          <div className='hero-content'>
-            <h1>Welcome to the college placement portal</h1>
-            <p>Prepare to fulfill your DREAMS!</p>
-            <IonButton expand="block" color="secondary"href='/companies'>
-              Companies
-            </IonButton>
-          <IonButton expand='block' color='secondary' href='/placement-prep'>
-            Start your placement prep
-          </IonButton>
-          </div>
-        </section>
+        {/* Main content with Navbar */}
+        <IonPage id="main-content">
+          <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
 
-        
-        <ExploreContainer />
-      </IonContent>
+          <IonContent fullscreen>
+            <IonHeader collapse="condense">
+              <IonToolbar>
+                <IonTitle size="large">Home</IonTitle>
+              </IonToolbar>
+            </IonHeader>
+            <ExploreContainer />
+          </IonContent>
+        </IonPage>
+      </IonSplitPane>
     </IonPage>
   );
 };
