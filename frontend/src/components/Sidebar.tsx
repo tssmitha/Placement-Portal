@@ -1,41 +1,67 @@
 import React from 'react';
 import './Sidebar.css';
-import { IonContent, IonList, IonItem, IonIcon, IonLabel, IonMenu, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
-import { homeOutline, peopleOutline, helpCircleOutline, podiumOutline, chatbubbleOutline, mailOutline } from 'ionicons/icons';
+import { 
+  IonContent, 
+  IonList, 
+  IonItem, 
+  IonIcon, 
+  IonLabel, 
+  IonMenu 
+} from '@ionic/react';
+import { 
+  homeOutline, 
+  peopleOutline, 
+  helpCircleOutline, 
+  podiumOutline, 
+  chatbubbleOutline, 
+  mailOutline, 
+  bookOutline, 
+  hardwareChipOutline 
+} from 'ionicons/icons';
 
 const Sidebar: React.FC = () => {
   return (
-    <IonMenu contentId="main-content" type="overlay">
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Placement-Portal</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
+    <IonMenu contentId="main-content" type="overlay" className='sidebar-content'>
+      <IonContent className='container'>
         <IonList>
-          <IonItem button>
-            <IonIcon icon={homeOutline} slot="start" />
+          <IonItem lines='none' className="center-item" routerLink={`/`} button>
+            <IonIcon icon={homeOutline} />
             <IonLabel>Feed</IonLabel>
           </IonItem>
-          <IonItem button>
-            <IonIcon icon={peopleOutline} slot="start" />
+
+          <IonItem lines='none' className="center-item" routerLink={`/alumniconnect`} button>
+            <IonIcon icon={peopleOutline} />
             <IonLabel>Alumni</IonLabel>
           </IonItem>
-          <IonItem button>
-            <IonIcon icon={helpCircleOutline} slot="start" />
+
+          <IonItem lines='none' className="center-item" routerLink={`/ask`} button>
+            <IonIcon icon={helpCircleOutline} />
             <IonLabel>Ask</IonLabel>
           </IonItem>
-          <IonItem button>
-            <IonIcon icon={podiumOutline} slot="start" />
+
+          <IonItem lines='none' className="center-item" routerLink={`/problems`} button>
+            <IonIcon icon={podiumOutline} />
             <IonLabel>Problems</IonLabel>
           </IonItem>
-          <IonItem button>
-            <IonIcon icon={chatbubbleOutline} slot="start" />
+
+          <IonItem lines='none' className="center-item" routerLink={`/communities`} button>
+            <IonIcon icon={chatbubbleOutline} />
             <IonLabel>Communities</IonLabel>
           </IonItem>
-          <IonItem button>
-            <IonIcon icon={mailOutline} slot="start" />
+
+          <IonItem lines='none' className="center-item" routerLink={`/inbox`} button>
+            <IonIcon icon={mailOutline} />
             <IonLabel>Inbox</IonLabel>
+          </IonItem>
+
+          <IonItem lines='none' className="center-item" routerLink={`/resources`} button>
+            <IonIcon icon={bookOutline} />
+            <IonLabel>Resources</IonLabel>
+          </IonItem>
+
+          <IonItem lines='none' className="center-item" routerLink={`/aiinterview`} button>
+            <IonIcon icon={hardwareChipOutline} />
+            <IonLabel>AI Interview</IonLabel>
           </IonItem>
         </IonList>
       </IonContent>
