@@ -1,0 +1,70 @@
+/* For the container that holds the form */
+.signup-container {
+    background-color: var(--ion-background-color);
+    color: var(--ion-text-color);
+    font-family: var(--ion-font-family);
+    width: 100%;
+    max-width: 600px;  /* Adjust the max-width as needed */
+    margin: 20px auto; /* Center horizontally with some space */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100vh;  /* Ensure the container takes the full height */
+    overflow-y: scroll;  /* Only the container gets the scroll bar */
+    position: relative;
+  }
+  
+  .signup-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .signup-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--ion-color-dark);
+    border-radius: 5px;
+  }
+  
+  .signup-button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--ion-color-primary);
+    color: var(--ion-color-light);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .skeleton-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  

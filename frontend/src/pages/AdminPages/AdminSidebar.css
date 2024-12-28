@@ -1,0 +1,59 @@
+/* AdminSidebar.css */
+
+/* Adjust the menu header styles */
+ion-menu ion-header {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  ion-menu ion-title {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  /* Sidebar list items */
+  ion-menu ion-item {
+    font-size: 1.1rem;
+    --background: #f9f9f9;
+  }
+  
+  ion-menu ion-item:hover {
+    --background: #007bff;
+    --color: white;
+  }
+  
+  ion-menu ion-icon {
+    color: #007bff;
+  }
+  
+  ion-menu ion-icon:hover {
+    color: white;
+  }
+  
+  /* Active item styling */
+  ion-menu ion-item.activated {
+    --background: #007bff;
+    --color: white;
+  }
+  
+  .hamburger-container {
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+/* Sidebar width */
+ion-menu[type="overlay"] {
+  --width: 250px;
+}
+
+/* Main content padding */
+#main-content {
+  padding: 20px;
+}
+
+/* Style the menu icon */
+ion-icon {
+  cursor: pointer;
+}
+

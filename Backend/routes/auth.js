@@ -2,6 +2,7 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const Student = require('../Models/students');
+const Onboarding = require('../Models/onboardingSchema');
 const { sendPasswordSetupEmail } = require('../services/emailService');
 const nodemailer = require('nodemailer');
 const router = express.Router();
@@ -11,6 +12,35 @@ router.get('/test', (req, res) => {
     res.json({ message: "Test endpoint is working!" });
 });
 
+
+router.post('/signup' , async(req,res) => {
+    try{
+        const { name , email , mobile , dob , usn , semester , branch , currentYear , startYear , termsAccepted } = req.body;
+
+        if(!termsAccepted){
+            return res.status(400).json({message : 'You must accept the terms and conditions'});
+        }
+
+        const newStudent = new Student({
+            name,
+            email,
+            mobile,
+            dob,
+            usn,
+            semester,
+            branch,
+            currentYear,
+            startYear,
+            termsAccepted,
+        });
+
+        const savedStudent = await newStudent.save();
+        res.status(201).json({message : 'Registration successful. Awaiting admin approval'});
+    }catch(error){
+        console.log(error);
+        res.status(500).json({ message : 'Error registering student' , error : error.message});
+    }
+});
 
 router.post('/register' , async(req,res) => {
     const{ name, usn , email , course} = req.body;
@@ -115,5 +145,16 @@ router.post('/login',async(req,res) => {
         res.status(500).json({message : 'Server error'});
     }
 });
+
+router.post("/registered-students", async (req, res) => {
+    try {
+      const newStudent = new Onboarding(req.body);
+      await newStudent.save();
+      res.status(200).send({ message: "Student data saved successfully" });
+    } catch (error) {
+      console.error("Error saving student data:", error);
+      res.status(500).send({ message: "Failed to save student data" });
+    }
+  });
 
 module.exports = router;

@@ -2,9 +2,11 @@ const jwt = require('jsonwebtoken');
 
 const authenticateJWT = (req,res,next) => {
     const token = req.headers.authorization?.split(' ')[1];
+    console.log(token);
     if(token){
         jwt.verify(token , process.env.JWT_SECRET, (err, user) => {
             if(err){
+                console.error(err);
                 return res.status(403).json({message : 'Invalid or expired toen'});
             }
             req.user = user;
@@ -15,14 +17,14 @@ const authenticateJWT = (req,res,next) => {
     }
 };
 
-const verifyRole = (role) => {
+const verifyRoles = (...roles) => {
     return (req,res,next) => {
-        if(req.user && req.user.role === role){
+        if(req.user && roles.includes(req.user.role)){
             next();
         }else{
-            res.status(403).json({message : 'Access denied : Admins only'});
+            res.status(403).json({message : 'Access denied'});
         }
     };
 };
 
-module.exports = { authenticateJWT , verifyRole};
+module.exports = { authenticateJWT , verifyRoles};
