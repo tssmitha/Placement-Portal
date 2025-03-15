@@ -1,8 +1,8 @@
 import React from 'react';
 import './Sidebar.css';
 import { IonContent, IonList, IonItem, IonIcon, IonLabel, IonMenu, IonHeader, IonToolbar, IonTitle, IonAccordion, IonAccordionGroup } from '@ionic/react';
-import { homeOutline, peopleOutline, helpCircleOutline, podiumOutline, chatbubbleOutline, mailOutline, bookOutline } from 'ionicons/icons';
-import ExploreContainer from './../../../../working_dir/Placement-Portal/frontend/src/components/ExploreContainer';
+import { homeOutline, peopleOutline, helpCircleOutline, podiumOutline, chatbubbleOutline, mailOutline, bookOutline, buildOutline, paperPlaneOutline, paperPlane } from 'ionicons/icons';
+// import ExploreContainer from './../../../../working_dir/Placement-Portal/frontend/src/components/ExploreContainer';
 
 
 const Sidebar: React.FC = () => {
@@ -21,18 +21,15 @@ const Sidebar: React.FC = () => {
             <IonLabel>Alumni</IonLabel>
           </IonItem>
 
-          <IonItem lines='none' className="center-item" routerLink={`/ask`} button>
-            <IonIcon icon={helpCircleOutline}  />
-            <IonLabel>Ask</IonLabel>
+          <IonItem lines='none' className="center-item" routerLink={`/companies`} button>
+            <IonIcon icon={buildOutline}  />
+            <IonLabel>companies</IonLabel>
           </IonItem>
           <IonItem lines='none' className="center-item" routerLink={`/problems`} button>
             <IonIcon icon={podiumOutline} />
             <IonLabel>Problems</IonLabel>
           </IonItem>
-          <IonItem lines='none' className="center-item" routerLink={`/communities`} button>
-            <IonIcon icon={chatbubbleOutline}  />
-            <IonLabel>Communities</IonLabel>
-          </IonItem>
+        
           <IonItem lines='none' className="center-item" routerLink={`/inbox`} button>
             <IonIcon icon={mailOutline}  />
             <IonLabel>Inbox</IonLabel>
@@ -41,7 +38,10 @@ const Sidebar: React.FC = () => {
             <IonIcon icon={bookOutline} />
             <IonLabel>Resources</IonLabel>
           </IonItem>
-
+          <IonItem lines='none' className="center-item" routerLink={`/ats-score`} button>
+            <IonIcon icon={paperPlaneOutline} />
+            <IonLabel>ATS - Score</IonLabel>
+          </IonItem>
       
 
       

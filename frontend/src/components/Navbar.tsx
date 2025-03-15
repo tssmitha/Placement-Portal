@@ -21,6 +21,14 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
           <IonButton>
             <IonIcon icon={notificationsOutline} />
           </IonButton>
+          <IonButton href="/student-login" color="primary">
+            Sign In
+          </IonButton>
+          
+          {/* Sign Up Button */}
+          <IonButton href="/student-signup" color="secondary">
+            Sign Up
+          </IonButton>
         </IonButtons>
       </IonToolbar>
     </IonHeader>

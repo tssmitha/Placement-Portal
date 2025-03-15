@@ -100,3 +100,4 @@ const releaseFormSchema = new mongoose.Schema({
 releaseFormSchema.index({ 'studentDetails.usn': 1 }, { sparse: true });
 
 module.exports = mongoose.model('ReleaseForm', releaseFormSchema);
+

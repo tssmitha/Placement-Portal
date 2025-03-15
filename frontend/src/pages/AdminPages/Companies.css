@@ -1,0 +1,75 @@
+/* Add this CSS to your stylesheet */
+ion-card {
+    margin: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  ion-label {
+    font-size: 1rem;
+  }
+  
+  ion-button {
+    margin-top: 10px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Add this CSS to style the search and filter section */
+/* .search-filter-container {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  ion-searchbar {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+  
+  ion-item {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  } */
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .companies-container {
+    height: 100vh; /* Full height of the viewport */
+    overflow-y: scroll; /* Always show the scrollbar */
+    padding: 16px; /* Optional for spacing */
+    box-sizing: border-box; /* Include padding in height/width calculations */
+  }
+  
+  /* Optional: Customize the scrollbar */
+  .companies-container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  .companies-container::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar thumb color */
+    border-radius: 4px; /* Rounded edges for the thumb */
+  }
+  
+  .companies-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Change color on hover */
+  }
+  
+  .companies-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Scrollbar track color */
+  }
+  
+  

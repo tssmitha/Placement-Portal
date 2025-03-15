@@ -1,0 +1,79 @@
+/* Overall Form Container */
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+.signup-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signup-header img {
+  max-width: 100px;
+  height: auto;
+}
+
+.signup-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Input Fields */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+
+.signup-form ion-item {
+  --padding-start: 0; /* Remove extra padding on the left */
+}
+
+.signup-form ion-label {
+  font-size: 14px;
+  color: #555;
+}
+
+.signup-form ion-input {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Error Message Styling */
+.error-text {
+  color: red;
+  font-size: 0.9em;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+/* Signup Button */
+.signup-button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.signup-button ion-button {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  --background: #007bff;
+  --background-hover: #0056b3;
+  --color: white;
+  border-radius: 5px;
+}

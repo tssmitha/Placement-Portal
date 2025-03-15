@@ -1,0 +1,18 @@
+.result-content {
+    padding: 16px;
+  }
+  
+  .result-summary {
+    margin-bottom: 16px;
+  }
+  
+  .question-breakdown {
+    margin-top: 16px;
+  }
+  
+  .actions {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+  }
+  

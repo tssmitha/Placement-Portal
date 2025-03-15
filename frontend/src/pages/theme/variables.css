@@ -1,0 +1,56 @@
+/* For information on how to create your own theme, please see:
+   http://ionicframework.com/docs/theming/ */
+   @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap');
+ 
+
+   :root {
+    --ion-color-primary: #007aff;
+    --ion-color-dark: #1f1f1f;
+    --ion-color-light: #ffffff;
+  
+    /* Sidebar background color for light and dark modes */
+    --sidebar-bg-color-light: #f5f5f5;
+    --sidebar-bg-color-dark: #101010;
+  
+    /* Text colors for light and dark modes */
+    --text-color-light: #000000;
+    --text-color-dark: #ffffff;
+  
+    /* Customize highlight colors as per the design */
+    --highlight-color: #ffd700;
+
+    /* Default font-family */
+    --ion-font-family: "Libre Franklin", sans-serif;
+}
+
+/* Dark theme settings */
+.dark-theme {
+    --ion-background-color: var(--sidebar-bg-color-dark);
+    --ion-text-color: var(--text-color-dark);
+    --ion-icon-color: var(--text-color-dark); /* Icon color for dark mode */
+
+    /* Apply font style */
+    font-style: normal;
+  
+    /* Additional styling specific to dark mode if needed */
+}
+
+/* Light theme settings */
+.light-theme {
+    --ion-background-color: var(--sidebar-bg-color-light);
+    --ion-text-color: var(--text-color-light);
+    --ion-icon-color: var(--text-color-light); /* Icon color for light mode */
+}
+
+/* Apply the --ion-icon-color variable to all ion-icons */
+ion-icon {
+    color: var(--ion-icon-color, inherit);
+}
+
+/* global.css */
+ion-page,
+ion-content {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+

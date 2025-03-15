@@ -1,0 +1,71 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Admin Home Container */
+.admin-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center vertically */
+  min-height: 100vh; /* Full viewport height */
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 1200px; /* Adjust max width as needed */
+  width: 100%; /* Full width within container */
+  text-align: center;
+}
+
+/* Welcome Section */
+.welcome-section {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.welcome-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #2e6da4;
+}
+
+/* Carousel Section */
+.image-carousel-section {
+  position: relative;
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+.carousel-images img {
+  width: 100%;
+  max-width: 1000px; /* Center large images */
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Placement Highlights Section */
+.placement-highlights-section {
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 800px;
+}
+
+/* Footer */
+.footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

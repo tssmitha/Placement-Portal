@@ -1,0 +1,16 @@
+.admin-taskbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.admin-taskbar .ion-title {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.admin-taskbar .ion-buttons {
+  display: flex;
+  align-items: center;
+}
