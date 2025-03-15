@@ -16,7 +16,7 @@ const AdminDashboard: React.FC = () =>{
     return(
         <Router>
             <div className="admin-dashboard">
-                <AdminSidebar />
+                {/* <AdminSidebar /> */}
             
                 <div id="main-content" className="dashboard-content">
                     <Switch>

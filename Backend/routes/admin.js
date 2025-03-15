@@ -6,6 +6,7 @@ const Form = require('../Models/releaseFormSchema');
 const path = require('path');
 const multer = require('multer');
 const mongoose = require('mongoose');
+const { getAdminStats } = require('../controllers/adminControllers');
 
 const router = express.Router();
 
@@ -127,17 +128,19 @@ router.get('/download-jd/:formId', async (req, res) => {
 });
 
 
-router.get('/:id' , async(req,res)=>{
-    try{
-        const form = await ReleaseForm.findById(req.params.id);
-        if(!form){
-            return res.status(404).json({error : 'Form not found'});
-        }
-        res.status(200).json(form);
-    }catch(error){
-        console.error(error);
-        res.status(500).json({ error : 'Server error.Please try again later'});
-    }
-});
+// router.get('/:id' , async(req,res)=>{
+//     try{
+//         const form = await ReleaseForm.findById(req.params.id);
+//         if(!form){
+//             return res.status(404).json({error : 'Form not found'});
+//         }
+//         res.status(200).json(form);
+//     }catch(error){
+//         console.error(error);
+//         res.status(500).json({ error : 'Server error.Please try again later'});
+//     }
+// });
+
+router.get('/stats', getAdminStats);
 
 module.exports = router;

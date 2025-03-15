@@ -1,14 +1,17 @@
-import React,{useEffect , useRef} from "react";
+import React,{useEffect , useRef , ReactNode , useState} from "react";
+import { IonHeader, IonToolbar, IonButtons, IonIcon, IonTitle, IonContent, IonPage , IonSplitPane } from '@ionic/react';
+import { menuOutline, logOutOutline, personCircleOutline } from 'ionicons/icons';
+import { menuController } from '@ionic/core';
 import './AdminHome.css';
-import './AdminTaskbar';
 import AdminTaskbar from "./AdminTaskbar";
-import Sidebar from "../../components/Sidebar";
+import AdminSidebar from "./AdminSidebar";
+
 
 const AdminHome : React.FC < {isAdmin : boolean}> = ( { isAdmin})=> {
-  <Sidebar />
   const carouselRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const videoContainerRef = useRef<HTMLDivElement>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const scrollCarousel = (direction: string) => {
     const carousel = carouselRef.current;
@@ -64,13 +67,29 @@ const AdminHome : React.FC < {isAdmin : boolean}> = ( { isAdmin})=> {
     }
   };
 
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(prev => !prev);
+  };
+
   // const videoUrls = [
   //   "https://www.youtube.com/watch?v=ymR5olxTS_A",
   // ];
 
     return(
-      // <AdminTaskbar>
+      <IonPage>
+      {/* <IonHeader>
+        <IonToolbar>
+          <AdminTaskbar />
+        </IonToolbar>
+      </IonHeader> */}
+
+      <IonSplitPane contentId="main-content">
+        <AdminSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+
+      <IonContent>
         <div className="admin-home">
+            
           <section className="welcome-section">
       <h1 className="welcome-title">Welcome to the Placement Portal</h1>
       <div className="welcome-content">
@@ -195,7 +214,7 @@ const AdminHome : React.FC < {isAdmin : boolean}> = ( { isAdmin})=> {
             {isAdmin && <button className="edit-button">Manage Highlights</button>}
           </section>
 
-          <section className="videos-section">
+          {/* <section className="videos-section">
   <h2>Promotional Videos</h2>
   <div className="video-gallery">
     <iframe
@@ -211,8 +230,8 @@ const AdminHome : React.FC < {isAdmin : boolean}> = ( { isAdmin})=> {
       className="video-frame"
     />
     {/* Add more video frames as needed */}
-  </div>
-</section>
+  {/* </div>
+</section> */} 
 
 <section className="recruiters-highlights">
       <h2>Our Recruiters</h2>
@@ -269,7 +288,10 @@ const AdminHome : React.FC < {isAdmin : boolean}> = ( { isAdmin})=> {
             <p>&copy; 2024 Placement Department. All Rights Reserved</p>
           </footer>
         </div>
-        // </AdminTaskbar>
+      </IonContent>
+      </IonSplitPane>
+      </IonPage>
+      
     );
 };
 export default AdminHome;

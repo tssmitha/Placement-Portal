@@ -1,0 +1,28 @@
+.ats-container {
+    margin: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+   }
+   
+   input[type="file"] {
+    margin: 10px 0;
+   }
+   
+   .error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+   }
+   
+   .success {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+   }
+   
+   .improve {
+    color: orange;
+    font-weight: bold;
+    text-align: center;
+   }

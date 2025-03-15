@@ -1,5 +1,7 @@
+// 
+
 import React, { useState } from "react";
-import { Redirect, Route } from "react-router-dom";
+import { Redirect, Route , useLocation } from "react-router-dom";
 import {
   IonApp,
   IonRouterOutlet,
@@ -18,6 +20,8 @@ import AdminHome  from "./pages/AdminPages/AdminHome";
 import ReleaseForm from "./pages/AdminPages/ReleaseForm";
 import ReleaseFormPage from "./pages/StudentPages/StudentForms";
 import StudentForms from "./pages/StudentPages/Form";
+import AdminStats from "./pages/AdminPages/AdminStats";
+import CompanyManagement from "./pages/AdminPages/Companies";
 // import PaymentPage from "./pages/PaymentPage";
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -56,57 +60,60 @@ import Resources from "./pages/Resources";
 import Communities from "./pages/Communities";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
+import ATSScore from "./pages/ats/atsScore";
+
 
 setupIonicReact();
 
 const App: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  // const location = useLocation();
 
+  console.log("Current location: ", location);
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
     document.body.classList.toggle('dark-theme', !isDarkMode);
     document.body.classList.toggle('light-theme', isDarkMode);
   };
 
-  return (
-  <IonApp>
-    {" "}
-   
-    <IonReactRouter>
-<<<<<<< HEAD
-      <IonSplitPane contentId="main-content">
-        {/* <Sidebar /> */}
-=======
-      <IonSplitPane contentId="main-content" className="main-content">
-        <Sidebar />
-        <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
->>>>>>> 803fa5f485d4919f0c07c6c5eda4609c8fadbe53
+  const hideSidebarPaths = ["/admin-login"];
+  const shouldShowSidebar = !hideSidebarPaths.includes(location.pathname);
 
-        <IonRouterOutlet id="main-content" className="main-content">
-      
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={LoginPage} />
-          {/* <Route exact  path="/signup" component={SignUp} /> */}
-          {/* <Route exact path="/studentOnboardingForm" component={StudentOnboardingForm} /> */}
-          {/* <Route exact path="/payment" component={PaymentPage} /> */}
-          <Route exact path="/reset-password" component={ResetPassword} />
-          <Route exact path="/alumniconnect" component={Alumniconnect} />
-          <Route exact path="/ask" component={Ask} />
-          <Route exact path="/inbox" component={Inbox} />
-          <Route exact path="/problems" component={Problems} />
-          <Route exact path="/resources" component={Resources} />
-          <Route exact path="/communities" component={Communities} />
-          <Route exact path="/admin-login" component={AdminLogin} />
-          <Route exact path="/admin-dashboard" component={AdminDashboard} />
-          <Route exact path="/admin-home" component={AdminHome} />
-          <Route exact path="/admin-releaseForm/:formId" component={ReleaseForm} />
-          <Route exact path="/student-form/:formId" component={ReleaseFormPage} />
-          <Route exact path="/student-form" component={StudentForms} />
-  
-        </IonRouterOutlet>
-      </IonSplitPane>
-    </IonReactRouter>
-  </IonApp>)
+
+  return (
+    <IonApp>
+      {" "}
+      <IonReactRouter>
+          <IonSplitPane contentId="main-content" className="main-content">
+            <Sidebar />
+            <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            <IonRouterOutlet id="main-content" className="main-content">
+              
+              {/* <Route exact path="/" component={Home} /> */}
+              <Route exact path="/reset-password" component={ResetPassword} />
+              <Route exact path="/alumniconnect" component={Alumniconnect} />
+              <Route exact path="/ask" component={Ask} />
+              <Route exact path="/inbox" component={Inbox} />
+              <Route exact path="/problems" component={Problems} />
+              <Route exact path="/resources" component={Resources} />
+              <Route exact path="/ats-score" component={ATSScore} />
+              <Route exact path="/admin-releaseForm/:formId" component={ReleaseForm} />
+              <Route exact path="/student-form/:formId" component={ReleaseFormPage} />
+              <Route exact path="/student-form" component={StudentForms} />
+              <Route exact path="/admin-login" component={AdminLogin} />
+            {/* <Route exact path="/admin-dashboard" component={AdminDashboard} /> */}
+            <Route exact path="/" component={AdminHome} />
+            <Route exact path="/admin-stats" component={AdminStats} />
+            <Route exact path="/companies" component={CompanyManagement} />
+            <Route exact path="/student-login" component={LoginPage} />
+            <Route exact path="/student-signup" component={SignUp} />
+            </IonRouterOutlet>
+          </IonSplitPane>
+        
+        
+      </IonReactRouter>
+    </IonApp>
+  );
 };
 
 export default App;

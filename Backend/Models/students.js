@@ -17,6 +17,7 @@ const studentSchema = new Schema({
         enum: ['pending', 'verified', 'rejected'], 
         default: 'pending' 
     }, // Tracks if the account is verified
+    placementStatus: { type: String, enum: ['Placed', 'Not Placed'], default: 'unplaced' },
     registeredAt: { type: Date, default: Date.now }, // Tracks registration time
     updatedByAdminAt: { type: Date }, // Tracks admin's update time
 });

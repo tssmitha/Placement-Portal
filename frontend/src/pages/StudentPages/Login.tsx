@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { IonContent, IonPage, IonInput, IonButton, IonItem, IonLabel, InputChangeEventDetail, IonHeader, IonTitle, IonToolbar , IonDatetime } from '@ionic/react';
+import { IonContent, IonPage, IonInput, IonButton, IonItem, IonLabel, InputChangeEventDetail, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
 import { useHistory } from "react-router";
 import axios from "axios";
 import './Login.css';
-import Logo from './images.png';
 
-
-// Define the custom event interface
 interface IonInputCustomEvent extends CustomEvent {
   detail: InputChangeEventDetail;
 }
@@ -14,7 +11,7 @@ interface IonInputCustomEvent extends CustomEvent {
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error , setError] = useState('');
+  const [error, setError] = useState('');
   const history = useHistory();
 
   const handleEmailChange = (e: IonInputCustomEvent) => {
@@ -25,22 +22,19 @@ const LoginPage: React.FC = () => {
     setPassword(e.detail.value ?? '');
   };
 
-  const handleLogin = async() => {
-    //console.log('Logging in with', email, password);
+  const handleLogin = async () => {
     setError('');
 
-    if(!email ||!password){
+    if (!email || !password) {
       setError("Both email and password are required!");
       return;
     }
 
-    try{
-      const response  = await axios.post('http://localhost:5000/api/auth/login',{email , password});
-
+    try {
+      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
       localStorage.setItem('token', response.data.token);
-
       history.push('/');
-    }catch(err : any){
+    } catch (err: any) {
       setError('Invalid credentials, please try again.');
     }
   };
@@ -54,23 +48,17 @@ const LoginPage: React.FC = () => {
       </IonHeader>
 
       <IonContent className="login-page">
-
-        <div className="logo-container">
-          <img src={Logo} alt="college logo" className="college-logo" />
-          <h2>THE NATIONAL INSTITUTE OF ENGINEERING</h2>
-        </div>
-
         <div className="login-container">
-          <h2>Login to your account</h2>
+          <h2 className="login-heading">Login to your account</h2>
           <IonItem>
-            <IonLabel position="floating">Email</IonLabel>
-            <IonInput type="email" value={email} onIonChange={handleEmailChange} />
+            <IonLabel position="floating" ></IonLabel>
+            <IonInput type="email" placeholder='email' value={email} onIonChange={handleEmailChange} />
           </IonItem>
           <IonItem>
-            <IonLabel position="floating">Password</IonLabel>
-            <IonInput type="password" value={password} onIonChange={handlePasswordChange} />
+            <IonLabel position="floating"></IonLabel>
+            <IonInput type="password" placeholder='password' value={password} onIonChange={handlePasswordChange} />
           </IonItem>
-          <IonButton expand="block" onClick={handleLogin}>
+          <IonButton expand="block" onClick={handleLogin} className="login-btn">
             Log In
           </IonButton>
           <div className="error-message">{error && <p>{error}</p>}</div>

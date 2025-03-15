@@ -1,82 +1,16 @@
-/* AdminTaskbar Layout Styles */
-.admin-taskbar-layout {
-    display: flex;
-    height: 100vh; /* Full height of the screen */
-    flex-direction: row; /* Sidebar and content should be in a row */
-  }
-  
-  #main-content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Content will take the remaining space */
-    padding: 20px;
-    overflow-y: auto; /* Allow scrolling for content */
-    margin-left: 250px; /* To make room for the fixed sidebar */
-    transition: margin-left 0.3s ease;
-  }
-  
-  /* Sidebar */
-  .admin-sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #333; /* Dark sidebar color */
-    color: white;
-    padding-top: 20px;
-    z-index: 100; /* Keep sidebar on top */
-    transition: width 0.3s ease;
-  }
-  
-  .admin-sidebar ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  .admin-sidebar li {
-    padding: 15px;
-  }
-  
-  .admin-sidebar li:hover {
-    background-color: #444;
-    cursor: pointer;
-  }
-  
-  /* Taskbar */
-  .ion-toolbar {
-    background-color: #007bff; /* Taskbar color */
-    color: white;
-    padding: 10px;
-  }
-  
-  .ion-title {
-    flex-grow: 1;
-  }
-  
-  .ion-buttons {
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Profile and Logout Icons */
-  .ion-icon {
-    margin-left: 15px;
-    cursor: pointer;
-  }
-  
-  /* Make sidebar and content responsive */
-  @media screen and (max-width: 768px) {
-    #main-content {
-      margin-left: 0; /* Adjust for smaller screens */
-    }
-  
-    .admin-sidebar {
-      width: 200px;
-    }
-  
-    .admin-taskbar-layout {
-      flex-direction: column;
-    }
-  }
-  
+.admin-taskbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.admin-taskbar .ion-title {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.admin-taskbar .ion-buttons {
+  display: flex;
+  align-items: center;
+}

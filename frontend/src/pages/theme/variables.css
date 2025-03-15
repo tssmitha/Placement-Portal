@@ -1,6 +1,7 @@
 /* For information on how to create your own theme, please see:
    http://ionicframework.com/docs/theming/ */
    @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap');
+ 
 
    :root {
     --ion-color-primary: #007aff;
@@ -45,3 +46,11 @@
 ion-icon {
     color: var(--ion-icon-color, inherit);
 }
+
+/* global.css */
+ion-page,
+ion-content {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
