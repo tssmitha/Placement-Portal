@@ -76,6 +76,9 @@ const ATSScore: React.FC = () => {
           {" "}
       </IonHeader>
         {" "}
+        <br></br>
+        <br></br>
+        <br></br>
       <IonContent className="ion-padding">
            {" "}
         <div className="ats-container">
