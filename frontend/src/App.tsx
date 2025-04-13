@@ -61,6 +61,11 @@ import Communities from "./pages/Communities";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import ATSScore from "./pages/ats/atsScore";
+import Interview from "./pages/Interview";
+import Feedback from "./pages/Feedback";
+import RecommendationComponent from "./components/RecommendationComponent";
+import Aiinterview from "./pages/Aiinterview";
+
 
 
 setupIonicReact();
@@ -107,6 +112,11 @@ const App: React.FC = () => {
             <Route exact path="/companies" component={CompanyManagement} />
             <Route exact path="/student-login" component={LoginPage} />
             <Route exact path="/student-signup" component={SignUp} />
+            <Route exact path="/feedback" component={Feedback} />
+            <Route exact path="/interview" component={Interview} />
+            <Route exact path="/recommendation" component={RecommendationComponent} />
+            <Route exact path="/aiinterview" component={Aiinterview} />
+            
             </IonRouterOutlet>
           </IonSplitPane>
         

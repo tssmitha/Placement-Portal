@@ -13,6 +13,8 @@ const path = require("path");
 const fs = require("fs");
 const pdfParse = require("pdf-parse");
 const natural = require("natural"); // For stemming
+const questionRoutes = require('./routes/ai');
+const validateRoute = require('./routes/validate');
 
 dotenv.config();
 
@@ -45,6 +47,8 @@ app.use(cors({
     allowedHeaders : ['Content-Type' , 'Authorization'],
 }));
 app.use('/api/companies', companyRoutes); 
+app.use("/generate-questions", questionRoutes);
+app.use("/validate", validateRoute);
 app.use('/api' , statsRouter);
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Sidebar.css';
 import { IonContent, IonList, IonItem, IonIcon, IonLabel, IonMenu, IonHeader, IonToolbar, IonTitle, IonAccordion, IonAccordionGroup } from '@ionic/react';
-import { homeOutline, peopleOutline, helpCircleOutline, podiumOutline, chatbubbleOutline, mailOutline, bookOutline, buildOutline, paperPlaneOutline, paperPlane } from 'ionicons/icons';
+import { homeOutline, peopleOutline, helpCircleOutline,hardwareChipOutline,businessOutline, podiumOutline, chatbubbleOutline, mailOutline, bookOutline, buildOutline, paperPlaneOutline, paperPlane } from 'ionicons/icons';
 // import ExploreContainer from './../../../../working_dir/Placement-Portal/frontend/src/components/ExploreContainer';
 
 
@@ -42,7 +42,14 @@ const Sidebar: React.FC = () => {
             <IonIcon icon={paperPlaneOutline} />
             <IonLabel>ATS - Score</IonLabel>
           </IonItem>
-      
+          <IonItem lines='none' className="center-item" routerLink={`/aiinterview`} button>
+            <IonIcon icon={hardwareChipOutline} />
+            <IonLabel>AI Interview</IonLabel>
+          </IonItem> 
+          <IonItem lines='none' className="center-item" routerLink={`/recommendation`} button>
+            <IonIcon icon={businessOutline } />
+            <IonLabel>Company Recommendation</IonLabel>
+          </IonItem> 
 
       
       
